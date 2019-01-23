@@ -4,10 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --open",
-    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "server": "node server.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "zhouziyu",
   "license": "ISC",
@@ -15,14 +15,18 @@
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^2.1.0",
     "csv-loader": "^3.0.2",
+    "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.11",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
+    "webpack-dev-middleware": "^3.5.1",
     "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1",
     "xml-loader": "^1.2.1"
   }
 }

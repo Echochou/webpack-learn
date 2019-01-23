@@ -1,27 +1,14 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+
 function resolve(dir) {
     return path.resolve(__dirname, dir)
 }
 module.exports = {
     entry: {
-        app: './src/index.js',
-        print: './src/print.js'
-    },
-    devtool: "inline-source-map",
-    devServer: {
-        contentBase: "./dist"
-    },
-    plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new HTMLWebpackPlugin({
-            title: 'webpack-test'
-        })
-    ],
-    output: {
-        filename: '[name].bundle.js',
-        path: resolve('dist')
+        app: './src/index.js'
     },
     module: {
         rules: [
@@ -68,6 +55,15 @@ module.exports = {
                 ]
             }
         ]
+    },
+    plugins: [
+        new CleanWebpackPlugin(['dist']),
+        new HTMLWebpackPlugin({
+            title: 'webpack-test'
+        }),
+    ],
+    output: {
+        filename: '[name].bundle.js',
+        path: resolve('dist')
     }
-
 };
